@@ -6,7 +6,7 @@ body {
 }
 
 a {
-	font-weight: 100;
+	font-weight: normal;
 	text-decoration: none;
 	letter-spacing: 1px;
 }
@@ -29,19 +29,36 @@ footer {
 	padding: 10px;
 }
 
+/* navbar styles*/
 .navbar {
-	background-color: rgba(255,255,255,0.5);
+	background-color: rgba(255,255,255,1);
+	padding-right: 15px;
 }
-
-.navbar a {
-	color: black;
-	transition: 0.5s;
+.navbar-nav li > a:hover {
+	background-color: transparent;
 }
-.navbar a:hover,
-.navbar li > a:hover {
-	color: black;
-	background-color: rgba(186,186,186,0.5);
+#zoom-fade {
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  -webkit-text-shadow: 0 0 50px transparent;
+  -moz-text-shadow: 0 0 50px transparent;
+  -ms-text-shadow: 0 0 50px transparent;
+  -o-text-shadow: 0 0 50px transparent;
+  text-shadow: 0 0 50px transparent;
+  color: rgba(0, 0, 0, 0.5);
+  overflow: visible;
 }
+#zoom-fade:hover {
+  -webkit-text-shadow: 0 0 0px black;
+  -moz-text-shadow: 0 0 0px black;
+  -ms-text-shadow: 0 0 0px black;
+  -o-text-shadow: 0 0 0px black;
+  text-shadow: 0 0 0px black;
+}
+/* end */
 .intro-text a {
 	color: #919191;
 	transition: 0.5s;
@@ -105,11 +122,11 @@ header {
 	color: white;
 }
 
-.portfolio-img {
+.portfolio-item img {
 	border-radius: 10px;
 }
 
-.portfolio-caption p {
+.portfolio-item p {
 	font-style: italic;
 	color: #919191;
 }
@@ -147,10 +164,53 @@ form {
 	color: #919191;
 }
 
-.bg-green {
-	background-color: rgb(0,153,102);
+.portfolio-item {
+	overflow: hidden;
+	position: relative;
+	box-sizing: border-box;
+	display: inline-block;
 }
 
-.bg-grey {
-	background-color: #cccccc;
+.portfolio-content {
+	height: 100%;
+  	background-color: rgba(255,255,255,0.5);
+  	position: absolute;
+  	padding: 10px;
+  	top: 100%;
+  	transition: all 0.5s ease;
 }
+
+.portfolio-item:hover .portfolio-content {
+  background-color: rgba(255,255,255,0.8);
+  top: 0;
+}
+
+.portfolio-content a {
+	text-decoration: none;
+	color: black;
+	font-weight: normal;
+	letter-spacing: normal;
+}
+
+@media only screen and (max-width: 992px){
+	.portfolio-content {
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 768px) {
+	.portfolio-item {
+		margin: 10px;
+		text-align: left;
+	}
+	.portfolio-item img{
+		width: 70%;
+		float: left;
+	}
+	.portfolio-content {
+		width: 30%;
+		position: center;
+		float: right;
+		position: relative;
+	}
+}
+
