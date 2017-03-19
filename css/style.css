@@ -172,7 +172,8 @@ form {
 }
 
 .portfolio-content {
-	height: 100%;
+	height: 50%;
+	width: 100%;
   	background-color: rgba(255,255,255,0.5);
   	position: absolute;
   	padding: 10px;
@@ -182,7 +183,7 @@ form {
 
 .portfolio-item:hover .portfolio-content {
   background-color: rgba(255,255,255,0.8);
-  top: 0;
+  top: 50%;
 }
 
 .portfolio-content a {
@@ -208,9 +209,14 @@ form {
 	}
 	.portfolio-content {
 		width: 30%;
+		height: 100%;
 		position: center;
 		float: right;
 		position: relative;
+	}
+	.portfolio-content button, 
+	.portfolio-content p{
+		display: none;
 	}
 }
 
